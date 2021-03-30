@@ -31,4 +31,42 @@ Elaborar programa para análise em cascata de sistemas de RF: *system budget* e 
 
 ## Inicio da organização
 
-<Espaço para descrição>
+1.	O transmissor tem uma arquitetura do tipo transmissão direta
+2.	O receptor tem uma arquitetura super-heteródina;
+3.	A frequência intermediária do sinal FM broadcast é 455 kHz
+4.	As perdas de filtros em relação ao parâmetro S não são ideais, sendo assim, supõe-se que é aproximadamente -1 dB
+5.	A frequência central de sistemas FM na América do Norte é 200 kHz
+6.	Em relação ao amplificador LNA: Para um sinal, o ponto de compressão de 1dB geralmente é especificado como limite superior de utilidade para operações lineares
+
+## O sistema é composto por um pelo transmissor, link e receptor
+## Transmissor:
+1. Conversor D/A
+2. Misturador:
+Sinal de entrada: 20 V;
+Impedância: 50 ohm;
+Ganho: 20 dB (supõe-se)
+3. Oscilador:
+Frequência intermediária: 455 kHz;
+Amplificador de Potência
+
+## Dados iniciais
+Frequência RF: 97.5 MHz
+Distância: 70 Km;
+BW: 200 kHz;
+Potência de saída do amplificador de potência: 10 kW;
+Impedância do amplificador de potência: 20 ohm;
+Ganho da antena: 20 dBi;
+
+## Receptor
+1. Filtros:
+Quantidade: 2;
+Perda: -1 dB
+2. Amplificador:
+Quantidade: 2;
+3. Oscilador;
+Frequência intermediária 1: 10 MHz
+Frequência intermediária 2: 455 kHz
+4. Misturador
+5. Conversor D/A;
+Sinal de entrada: 50 mV
+
