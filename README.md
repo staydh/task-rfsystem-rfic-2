@@ -38,7 +38,8 @@ Elaborar programa para análise em cascata de sistemas de RF: *system budget* e 
 5.	A frequência central de sistemas FM na América do Norte é 200 kHz
 6.	Em relação ao amplificador LNA: Para um sinal, o ponto de compressão de 1dB geralmente é especificado como limite superior de utilidade para operações lineares
 
-## O sistema é composto por um pelo transmissor, link e receptor
+O sistema é composto por um pelo transmissor, link e receptor
+
 ## Transmissor:
 1. Conversor D/A
 2. Misturador:
