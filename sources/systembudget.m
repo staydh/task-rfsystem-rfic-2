@@ -28,7 +28,7 @@ RmT = 50; #ohm
 
 #Supondo o ganho do misturador 
 
-Gmist = 20; #dB
+Gmist = -5; #dB
 
 #Oscilador do transmissor;
 Ffi = 455e3; #Hz
@@ -42,8 +42,8 @@ Pt = (VmT^2)/RmT #dB
 PinT = 10*log10(1000*Pt) 
 PoutT = Ptx
 
-#GaT é ganho do amplificador do transmissor
-GaT = PoutT - PinT - Gmist
+#Ppa e ganho do amplificador do transmissor (PA)
+PpaT = PoutT - PinT - Gmist
 
 ###Receptor
 
@@ -53,47 +53,53 @@ GaT = PoutT - PinT - Gmist
 #Impedância do amplificador de potência
 #Ganho da antena
 
-#Considerando
-Ltx = 0;
-Lm = 0;
-Lrx = 0;
-Grx = 0;
+#Estipulando que o ganho total do receptor
+#apˆus a antena atˆm antes do conversor A/D ˆm 60 dB
 
-Prx = Ptx + Gtxa - FSPL #dBm
+PoutRT = 60; #dB 
+
+#Considerando
+Ltx = 5; #dB
+Lm = 3; #dB
+Lrx = 4;  #dB
+Grx = 20; #dBi
+Lfs = FSPL;
+
+Prx = Ptx + Gtxa - Ltx - Lfs - Lm + Grx - Lrx #dBm
 
 #Oscilador do receptor
 Ffi1 = 10e6; #Hz
 Ffi2 = 455e3; #Hz 
 
 FoscR1 = Frf + Ffi1
-Fosc2 = Frf + Ffi2
+FoscR2 = Frf + Ffi2
 
-#Conversor A/D
+#Conversor A/D 
+Nbits = 8; #Quantiade de bits do conversor A/D
 VconvR = 50e-3; #V 
+RconvR =  (2^Nbits);
 
 #Sensibilidade no receptor
+##O menor sinal possivel na entrada do receptor que possa ser visualizado
 
-Pr = ((VconvR)^2)/50;
+Pr = ((VconvR)^2)/RconvR;
 
 PinR = 10*log10(1000*Pr)
 
-Psen = PinR + Prx
-
-#Ganho da antena do receptor
-Grx = Prx - Ptx - Gtxa + FSPL
+Psen = PinR - PoutRT
 
 #Filtro do receptor
-QuantidadeFiltro = 2;
+QuantidadeFiltro = 4;
 PerdaFiltro = -1; #dB
 
 #Misturador do receptor
-QuantidadeMisturador = 1;
-PerdaMisturador = -10; #dB
+QuantidadeMisturador = 2;
+PerdaMisturador = -20; #dB
 
-#Ganho de cada amplificador do receptor
+#Ganho de cada amplificador do receptor (LNA)
 QuantidadeAmplifRecp = 2;
 
-Ppa = (Prx - (QuantidadeFiltro*PerdaFiltro) + (QuantidadeMisturador*PerdaMisturador))/QuantidadeAmplifRecp
+Plna = (PoutRT - (QuantidadeFiltro*PerdaFiltro) - (QuantidadeMisturador*PerdaMisturador))/QuantidadeAmplifRecp
 
 
 
