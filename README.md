@@ -30,7 +30,7 @@ Elaborar programa para análise em cascata de sistemas de RF: *system budget* e 
     - Commit de versão final: 05/04 (*sources* finais e descrição completa)
 
 ## Inicio da organização
-Esse programa faz a analise system budget de um sistema RF composto por um pelo transmissor, link e receptor. As caracteristicas do sistema são:
+Esse programa faz a analise system budget de um sistema RF composto por um transmissor, link e receptor. As caracteristicas do sistema são:
 
 1.	O transmissor tem uma arquitetura do tipo transmissão direta;
 2.	O receptor tem uma arquitetura super-heteródina: é composto por duas frequências intermediárias (FI's); usa 2 osciladores locais; dois conversores de frequência e dois filtros de FI;
@@ -43,87 +43,87 @@ Esse programa faz a analise system budget de um sistema RF composto por um pelo 
 ## Transmissor:
 
 1. Conversor D/A
-Sinal de saída: 20 V;
-Impedância: 50 ohm;
+* Sinal de saída: 20 V;
+* Impedância: 50 ohm;
 
 2. Misturador:
-Perda: -4 dB;
+* Perda: -4 dB;
 
 3. Oscilador:
-Frequência intermediária: 455 kHz;
+* Frequência intermediária: 455 kHz;
 
 4. Amplificador de Potência
-Potência de saída: 10 kW;
-Impedância: 50 ohm;
+* Potência de saída: 10 kW;
+* Impedância: 50 ohm;
 
 ## Dados iniciais
-Frequência RF: 97.5 MHz
-Distância: 70 Km;
-Largura de banda - BW: 200 kHz;
-Ganho da antena: 20 dBi;
+* Frequência RF: 97.5 MHz
+* Distância: 70 Km;
+* Largura de banda - BW: 200 kHz;
+* Ganho da antena: 20 dBi;
 
 ## Receptor
 1. Filtros:
-Quantidade: 4;
-Perda: -1 dB;
+* Quantidade: 4;
+* Perda: -1 dB;
 
 2. Amplificador:
-Quantidade: 2;
+* Quantidade: 2;
 
 3. Oscilador:
-Frequência intermediária 1: 10 MHz;
-Frequência intermediária 2: 455 kHz;
+* Frequência intermediária 1: 10 MHz;
+* Frequência intermediária 2: 455 kHz;
 
 4. Misturador:
-Quantidade: 2;
-Perda: -20 dB;
+* Quantidade: 2;
+* Perda: -20 dB;
 
 5. Conversor D/A:
-Sinal de entrada: 50 mV;
-Quantidade de bits: 8;
+* Sinal de entrada: 50 mV;
+* Quantidade de bits: 8;
 
 
-##Variáveis utilizadas
+## Variáveis utilizadas
 
-Frf - Frequência RF em Hz;
-d - Distância entre o emissor e o receptor em m;
-FSPL e Lfs - Perda de caminho de espaço livre em dB;
-Lm - Perdas diversas em dB;
+* Frf - Frequência RF em Hz;
+* d - Distância entre o emissor e o receptor em m; 
+* FSPL e Lfs - Perda de caminho de espaço livre em dB;
+* Lm - Perdas diversas em dB;
 
 1. Transmissor
-Ptx1 - Potência do amplificador de potência em W;
-Ptx - Potência do amplificador de potência em dBm;
-Ztx - Impedância do amplificador de potência em Ohm;
-Gtxa - Ganho da antena em dBi;
-VmT - Sinal de saída do conversor D/A na entrada do misturador em Volts;
-RmT - Impedância e saída do conversor D/A na entrada do misturador em Ohm;
-Gmist - ganho do misturador em dB;
-Ffi - Frequência intermediária do oscilador em Hz;
-Pt - Potência de entrada do amplificador em W;
-PinT - Potência de entrada do amplificador em dBm;
-PpaT - Ganho do amplificador PA;
-Ltx - Perdas em dB;
+* Ptx1 - Potência do amplificador de potência em W;
+* Ptx - Potência do amplificador de potência em dBm;
+* Ztx - Impedância do amplificador de potência em Ohm;
+* Gtxa - Ganho da antena em dBi;
+* VmT - Sinal de saída do conversor D/A na entrada do misturador em Volts;
+* RmT - Impedância e saída do conversor D/A na entrada do misturador em Ohm;
+* Gmist - ganho do misturador em dB;
+* Ffi - Frequência intermediária do oscilador em Hz;
+* Pt - Potência de entrada do amplificador em W;
+* PinT - Potência de entrada do amplificador em dBm;
+* PpaT - Ganho do amplificador PA;
+* Ltx - Perdas em dB;
 
 2. Receptor
-PoutRT - Ganho total do receptor (após a antena até antes do conversor A/D) em dB;
-Lrx - Perdas em dB;
-Grx - Ganho da antena em dBi;
-Ffi1 - Frequência intermediária 1 em Hz;
-Ffi2 - Frequência intermediária 2 em Hz;
-FoscR1 - Faixa 1 de frequência do oscilador em Hz;
-FoscR2 - Faixa 2 de frequência do oscilador em Hz;
-Nbits - Quantidade de bits do conversor A/D;
-VconvR - Mínimo sinal na entrada do conversor A/D em Volts;
-RconvR - Impedância do conversor A/D em Ohm;
-Pr - Potência na entrada do conversor D/A em W;
-PinR - Potênci na entrada do conversor D/A em dBm;
-Psen - Sensibilidade do receptor dB;
-QuantidadeFiltro - Quantiade de filtros;
-PerdaFiltro - Perda no filtro em dB;
-QuantidadeMisturador - Quantidade de misturadores;
-PerdaMisturador - Perda no misturador em dB;
-QuantidadeAmplifRecp - Quantidade de amplificadores no receptor;
-Plna - Ganho no amplificador LNA em dB;
+* PoutRT - Ganho total do receptor (após a antena até antes do conversor A/D) em dB;
+* Lrx - Perdas em dB;
+* Grx - Ganho da antena em dBi;
+* Ffi1 - Frequência intermediária 1 em Hz;
+* Ffi2 - Frequência intermediária 2 em Hz;
+* FoscR1 - Faixa 1 de frequência do oscilador em Hz;
+* FoscR2 - Faixa 2 de frequência do oscilador em Hz;
+* Nbits - Quantidade de bits do conversor A/D;
+* VconvR - Mínimo sinal na entrada do conversor A/D em Volts;
+* RconvR - Impedância do conversor A/D em Ohm;
+* Pr - Potência na entrada do conversor D/A em W;
+* PinR - Potênci na entrada do conversor D/A em dBm;
+* Psen - Sensibilidade do receptor dB;
+* QuantidadeFiltro - Quantiade de filtros;
+* PerdaFiltro - Perda no filtro em dB;
+* QuantidadeMisturador - Quantidade de misturadores;
+* PerdaMisturador - Perda no misturador em dB;
+* QuantidadeAmplifRecp - Quantidade de amplificadores no receptor;
+* Plna - Ganho no amplificador LNA em dB;
 
 
 
