@@ -48,6 +48,7 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 
 2. Misturador:
 * Perda: -4 dB;
+* Fator de ruído: 3;
 
 3. Oscilador:
 * Frequência intermediária: 455 kHz;
@@ -55,6 +56,7 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 4. Amplificador de Potência
 * Potência de saída: 10 kW;
 * Impedância: 50 ohm;
+* Fator de ruido: 5;
 
 ## Dados iniciais
 * Frequência RF: 97.5 MHz
@@ -69,6 +71,7 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 
 2. Amplificador:
 * Quantidade: 2;
+* Fator de ruído: 5;
 
 3. Oscilador:
 * Frequência intermediária 1: 10 MHz;
@@ -77,11 +80,12 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 4. Misturador:
 * Quantidade: 2;
 * Perda: -20 dB;
+* Fator de ruído: 3;
 
 5. Conversor D/A:
 * Sinal de entrada: 50 mV;
 * Quantidade de bits: 8;
-
+* SNR: -60 dB;
 
 ## Variáveis utilizadas
 
@@ -103,6 +107,10 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 * PinT - Potência de entrada do amplificador em dBm;
 * GpaT - Ganho do amplificador PA;
 * Ltx - Perdas em dB;
+* N_mT - Fator de ruído do misturador;
+* N_paT - Fator de ruído do amplificador;
+* N_T - Fator de ruído total do transmissor;
+* NF_T - Figura de ruído do transmissor em dB;
 
 2. Receptor
 * GoutRT - Ganho total do receptor (após a antena até antes do conversor A/D) em dB;
@@ -124,6 +132,10 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 * PerdaMisturador - Perda no misturador em dB;
 * QuantidadeAmplifRecp - Quantidade de amplificadores no receptor;
 * Glna - Ganho no amplificador LNA em dB;
-
+* SNR - Relação sinal-ruído do conversor A/D de 8 bits;
+* N_misR - Fator de ruído do misturador do receptor;
+* N_lna - Fator de ruído do amplificador LNA do receptor;
+* N_R - Fator de ruído total do receptor;
+* NF_R - Figura de ruído do receptor;
 
 
