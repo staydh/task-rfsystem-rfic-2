@@ -97,15 +97,15 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 * Gtxa - Ganho da antena em dBi;
 * VmT - Sinal de saída do conversor D/A na entrada do misturador em Volts;
 * RmT - Impedância e saída do conversor D/A na entrada do misturador em Ohm;
-* Gmist - ganho do misturador em dB;
+* Gmist - Ganho do misturador em dB;
 * Ffi - Frequência intermediária do oscilador em Hz;
 * Pt - Potência de entrada do amplificador em W;
 * PinT - Potência de entrada do amplificador em dBm;
-* PpaT - Ganho do amplificador PA;
+* GpaT - Ganho do amplificador PA;
 * Ltx - Perdas em dB;
 
 2. Receptor
-* PoutRT - Ganho total do receptor (após a antena até antes do conversor A/D) em dB;
+* GoutRT - Ganho total do receptor (após a antena até antes do conversor A/D) em dB;
 * Lrx - Perdas em dB;
 * Grx - Ganho da antena em dBi;
 * Ffi1 - Frequência intermediária 1 em Hz;
@@ -116,14 +116,14 @@ Esse programa faz a analise system budget de um sistema RF composto por um trans
 * VconvR - Mínimo sinal na entrada do conversor A/D em Volts;
 * RconvR - Impedância do conversor A/D em Ohm;
 * Pr - Potência na entrada do conversor D/A em W;
-* PinR - Potênci na entrada do conversor D/A em dBm;
+* PinR - Potência na entrada do conversor D/A em dBm;
 * Psen - Sensibilidade do receptor dB;
-* QuantidadeFiltro - Quantiade de filtros;
+* QuantidadeFiltro - Quantidade de filtros;
 * PerdaFiltro - Perda no filtro em dB;
 * QuantidadeMisturador - Quantidade de misturadores;
 * PerdaMisturador - Perda no misturador em dB;
 * QuantidadeAmplifRecp - Quantidade de amplificadores no receptor;
-* Plna - Ganho no amplificador LNA em dB;
+* Glna - Ganho no amplificador LNA em dB;
 
 
 
